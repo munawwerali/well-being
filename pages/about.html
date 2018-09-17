@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>About Sandman</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body class="app" id="about">
+  <img src="../assets/sleep.png" alt="sleep" class="logo">
+  <hr />
+  <div class="about info-text">
+    <p>Well-being will remind you to take a rest while working and that you can always continue to the work after the break.</p>
+    <p>Inspired by <strong class="link">https://github.com/alexanderepstein/Sandman</strong> a website that calculates optimal times to fall asleep based on when you want to wake up.</p>
+    <p>It will notify you throughout your work to take breaks for water, and for better eye care</p>
+    <div>
+      <hr />
+      <div class="electron info-other" style="text-align:center">
+        Well-being Version
+        <script>
+          fs = require('fs');
+          path = require("path"); //allow for use of path
+          filePath = path.join(__dirname, '../package.json')
+          json = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+          version = json.version;
+          document.write(version);
+        </script><br> Node.js Version
+        <script>
+          document.write(process.versions.node)
+        </script><br> Chromium Version
+        <script>
+          document.write(process.versions.chrome)
+        </script><br> Electron Version
+        <script>
+          document.write(process.versions.electron)
+        </script><br>
+        <script src="../js/about.js"></script>
+      </div>
+</body>
+
+</html>

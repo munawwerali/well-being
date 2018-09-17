@@ -1,0 +1,31 @@
+{
+  "name": "wellbeing",
+  "version": "1.0.0",
+  "license": "MIT",
+  "appCopyright": "Syed Munawwer Ali",
+  "appCategoryType": "Productivity",
+  "author": "Syed Munawwer Ali <munawweralin@github.com>",
+  "description": "An Application Built With Late Night Developers In Mind",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/munawwerali/Sandman"
+  },
+  "devDependencies": {
+    "electron": "^1.7.2",
+    "mocha": "^3.4.2",
+    "spectron": "^3.6.4"
+  },
+  "dependencies": {
+    "debug": "^2.6.8",
+    "electron-localshortcut": "^2.0.0",
+    "electron-notifications": "^1.0.0",
+    "electron-settings": "^3.0.14",
+    "jquery": "^3.2.1",
+    "node-schedule": "^1.2.1"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "node tests/unitTest.js;  "
+  }
+}

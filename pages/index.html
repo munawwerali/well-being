@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Well-being</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./timepicker.min.js"></script>
+  <link href="./timepicker.min.css" rel="stylesheet"/>
+
+  <script>window.$ = window.jQuery = require('jquery');</script>
+  <script src="../js/indexandpref.js"></script>
+  
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#notificationSet").fadeIn(2000);
+        $("#notificationSet").fadeOut(2000);
+        setTime();
+      });
+    });
+  </script>
+</head>
+
+<body class="app" id="index">
+  <img src="../assets/sleep.png" alt="sleep" class="logo">
+  <div class="input-group cols no-label">
+    <div id="alarmTimediv" class="input-wrapper col col1 w-70">
+      <input type="text" id="alarmTime" min="00:00:00" max="23:59:00" />
+    </div>
+    <div class="button-wrapper col col2 w-30">
+      <button id="setTime">Set break time</button>
+    </div>
+  </div>
+  
+  <div class="notificationSet" id="notificationSet" style="display: none;">
+    <label id="lblTime"> Notifications set.</label>
+  </div>
+  <!-- All of the Node.js APIs are available in this renderer process. -->
+  <script type="text/javascript">
+    document.getElementById("alarmTime").value = "00:30";
+    document.addEventListener("DOMContentLoaded", function () { readPreferences(); });
+    var timepicker = new TimePicker('alarmTime', {
+      lang: 'en',
+      theme: 'dark'
+    });
+    timepicker.on('change', function (evt) {
+
+      var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+      evt.element.value = value;
+
+    }); 
+  </script>
+  <script type="text/javascript">
+   // document.addEventListener("DOMContentLoaded", function () { getLatestReleaseInfo(); });
+    document.getElementById("setTime").click(); // Click the button to start
+
+  </script>
+
+</body>
+
+</html>
