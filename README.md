@@ -1,41 +1,18 @@
 <div align="center">
 
- # ![Sandman](https://github.com/alexanderepstein/Sandman/blob/master/assets/sleep_github.png) Sandman ![Sandman](https://github.com/alexanderepstein/Sandman/blob/master/assets/sleep_github.png)
+ 
 
- ####  an application built with late night developers in mind
-
-![Version](https://img.shields.io/github/release/alexanderepstein/Sandman/all.svg) [![Github All Releases](https://img.shields.io/github/downloads/alexanderepstein/Sandman/total.svg)]() [![Build Status](https://travis-ci.org/alexanderepstein/Sandman.svg?branch=master)](https://travis-ci.org/alexanderepstein/Sandman) [![Libraries.io for GitHub](https://img.shields.io/librariesio/github/alexanderepstein/Sandman.svg)]()
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/12b7f0ba50924e73b3efba2927a8c3ea)](https://www.codacy.com/app/alexanderepstein/Sandman?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alexanderepstein/Sandman&amp;utm_campaign=Badge_Grade)  ![framework](https://img.shields.io/badge/framework-electron-blue.svg)  ![platform](https://img.shields.io/badge/platform-crossplatform-lightgrey.svg)  [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=plastic)]()
-
-
- ![Counting Sheep](https://github.com/alexanderepstein/Sandman/blob/master/assets/giphy.gif)
-
- ## Lightweight bash version can be found <a href="https://github.com/alexanderepstein/Sandman-Lite">here</a>
-
- Sandman will remind you to take a rest and that you can always come back to the work tomorrow.
+ Well-Being will remind you to take a break while working.
 
 A sleep cycle is a 90-minute chunk of time where your body transitions through various phases of sleep — all the way down to deep REM sleep — then back again. Some health experts believe that these 90-minute sleep cycles are the key to restful sleep. They recommend trying to sleep exactly 7.5 hours — or even 9 hours, if you have the time.
 
-
-Based on your wakeup time and the sleep algorithm Sandman calculates the best times for you to sleep. It will notify you throughout the night when the optimal times to shutdown your computer and start to head to sleep and provide a button to do just that.
-
-This application works well with https://justgetflux.com/
-
-Inspired by http://sleepyti.me
-
-</div>
-
-## In Action
-
-![Usage](https://github.com/alexanderepstein/Sandman/blob/master/assets/Usage.gif)
 
 
 
 ## Install
 
 ### Mac
-Homebrew casks are the preferred method of installations (easiest to upgrade Sandman with brew cask update)
+Homebrew casks are the preferred method of installations (easiest to upgrade Well-Being with brew cask update)
 
 #### Homebrew install
 ```bash
@@ -46,7 +23,7 @@ brew cask install sandman
 #### Manual install
 Download your respective platforms release from the downloads section.
 
-Drag the Sandman.app from the Sandman dmg to the Applications folder. Double Clicking on the app should run it and it could be kept in the dock from here.
+Drag the Well-Being.app from the Well-Being dmg to the Applications folder. Double Clicking on the app should run it and it could be kept in the dock from here.
 
 ### Linux
 Open up a terminal and navigate to the folder containing the downloaded installer files and run
@@ -58,17 +35,17 @@ sudo apt-get install libappindicator1
 then depending on your system architecture either run
 
 ```bash
-sudo dpkg -i Sandman_1.9.2_amd64.deb
+sudo dpkg -i Well-Being_1.9.2_amd64.deb
 ```
 Or:
 ```bash
-sudo dpkg -i Sandman_1.9.2_x86.deb
+sudo dpkg -i Well-Being_1.9.2_x86.deb
 ```
 #### RedHat
 ```bash
-sudo rpm -i Sandman.rpm
+sudo rpm -i Well-Being.rpm
 ```
- This will actually install Sandman as a utility application which can be accessed from your respective distributions application launchpad.
+ This will actually install Well-Being as a utility application which can be accessed from your respective distributions application launchpad.
 
 ### Windows
 
@@ -82,16 +59,16 @@ scoop install sandman
 #### Manual install
 Download your respective architectures release from the downloads section.
 
-Open up another windows explorer and navigate to your program files folder (x86 or 64 bit is irrelevant). Now drag the entire Sandman Windows folder you extracted from the downloaded zip in the previous step over to the program files folder. Go into the folder that was just dragged over and find the Sandman.exe and run it. Now the application will show up in the dock where it can be pinned.
+Open up another windows explorer and navigate to your program files folder (x86 or 64 bit is irrelevant). Now drag the entire Well-Being Windows folder you extracted from the downloaded zip in the previous step over to the program files folder. Go into the folder that was just dragged over and find the Well-Being.exe and run it. Now the application will show up in the dock where it can be pinned.
 
 ## Downloads
 To get the full sourced version run in terminal:
 ```bash
-git clone https://github.com/alexanderepstein/Sandman
+git clone https://github.com/munawwerali/Well-Being
 ```
 
 Otherwise to just get the application click the link before to head to the latest release page and download your respective platform.
-##### [Version 1.9.2 Release](https://github.com/alexanderepstein/Sandman/releases/tag/v1.9.2)
+##### [Version 1.9.2 Release](https://github.com/munawwerali/Well-Being/releases/tag/v1.9.2)
 
 
 ## Uninstall
@@ -103,19 +80,19 @@ Otherwise to just get the application click the link before to head to the lates
 brew cask uninstall sandman
 ```
 #### Manual uninstall
-Go to the applications folder and delete the Sandman application.
+Go to the applications folder and delete the Well-Being application.
 
 ### Linux
 Open up a terminal and run:
 #### Debian
 
 ```bash
-sudo dpkg --remove Sandman
+sudo dpkg --remove Well-Being
 ```
 #### RedHat
 
 ```bash
-sudo rpm -e Sandman.rpm
+sudo rpm -e Well-Being.rpm
 ```
 
 ### Windows
@@ -126,9 +103,9 @@ scoop uninstall sandman
 ```
 
 #### Manual uninstall
-Open up the program files folder and delete the Sandman folder.
+Open up the program files folder and delete the Well-Being folder.
 
-## Reviews Of Sandman
+## Reviews Of Well-Being
 
 <a href="http://www.addictivetips.com/windows-tips/get-bed-time-alerts-based/">Addictive Tips Review</a>
 
@@ -142,8 +119,8 @@ It is assumed you already have node installed and therefore npm.
 
 To download the full source code and install the Dependencies run the following lines:
 ```bash
-git clone https://github.com/alexanderepstein/Sandman
-cd Sandman
+git clone https://github.com/munawwerali/Well-Being
+cd Well-Being
 npm install
 cd ..
 npm start dev # this will run the application with all of the devtools open
@@ -153,13 +130,13 @@ If you get some error and the application wont run try running the following lin
 
 ### Linux/Mac
 ```bash
-cd Sandman
+cd Well-Being
 sudo npm install -g
 ```
 
 ### Windows
 Right click on the start menu icon at the bottom left and click on the option to open a command prompt in developer mode
-cd to the Sandman directory then run
+cd to the Well-Being directory then run
 ```bash
 npm install -g
 ```
@@ -176,7 +153,7 @@ The app styling was made with: [Sass](http://sass-lang.com/) `v3.3.14`  [Ruby](h
 ### To Compile Source To Application
 
 ### Linux
-Open a terminal to the Sandman directory
+Open a terminal to the Well-Being directory
 ```bash
 cd build
 chmod a+x linux.sh
@@ -185,7 +162,7 @@ chmod a+x linux.sh
 This will build installers for Debian 32/64 bit and Redhat linux in the build/dist/installers folder
 
 ### Mac
-Open a terminal to the Sandman directory
+Open a terminal to the Well-Being directory
 ```bash
 cd build
 chmod a+x mac.sh
@@ -199,15 +176,15 @@ then run
 ```bash
 npm install -g electron-packager
 ```
-Then once electron packager is installed to package your electron application open up a terminal and cd into the Sandman folder then run
+Then once electron packager is installed to package your electron application open up a terminal and cd into the Well-Being folder then run
 
 For 64 Bit Binary:
 ```bash
-electron-packager . Sandman --platform win32 --arch x64 --out dist/
+electron-packager . Well-Being --platform win32 --arch x64 --out dist/
 ```
 For 32 Bit Binary
 ```bash
-electron-packager . Sandman --platform win32 --arch ia32 --out dist/
+electron-packager . Well-Being --platform win32 --arch ia32 --out dist/
 ```
 
 
