@@ -3,7 +3,7 @@ const path = require("path"); //allow for use of path
 const os = require("os");
 const exec = require("child_process").exec; //allows the shutdown of the host machine
 const schedule = require("node-schedule"); //allows for jobs scheduled at certain times
-const { shell, remote } = require("electron"); // allows the ability to open a webpage in users default browser
+const { shell } = require("electron"); // remote removed; quit handled via preload IPC
 const settings = require("electron-settings");
 const fs = require("fs");
 const iconPath = path.join(__dirname, "../assets/", "sleep.png"); //grabs the icon for notifications
@@ -21,8 +21,10 @@ var upTimeJob = null;
 var resetTime = null;
 
 function quit() {
-  remote.app.isQuitting = true;
-  remote.app.quit();
+  // Use secure preload-exposed API instead of remote
+  if (window.wellbeing && typeof window.wellbeing.quit === 'function') {
+    window.wellbeing.quit();
+  }
 }
 function militaryToStandard(hours) {
   /* make sure add radix*/

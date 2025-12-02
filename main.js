@@ -1,8 +1,11 @@
-const {app,Tray,Menu,shell,BrowserWindow} = require("electron"); //electron application stuff
+const {app,Tray,Menu,shell,BrowserWindow,ipcMain} = require("electron"); //electron application stuff
 const path = require("path"); //allows for use of path
 const url = require("url"); //allows for loadURL and url.format
 const iconPath = path.join(__dirname, "/assets/icon.png"); //grab the icon
 const fs = require("fs");
+// preload path for exposing secure APIs
+const preloadPath = path.join(__dirname, 'preload.js');
+const commonWebPreferences = { preload: preloadPath, contextIsolation: true, nodeIntegration: true };
 const filePath = path.join(__dirname, "/assets/settings.txt");
 const electronLocalshortcut = require("electron-localshortcut");
 
@@ -31,7 +34,8 @@ function preferencesWindow() {
   pref = new BrowserWindow({
     width: 500,
     height: 730,
-    resizable: false
+    resizable: false,
+    webPreferences: commonWebPreferences
   });
   pref.setMenu(null); //the about window has no menu
   pref.loadURL(url.format({ //loads the webpage for the about window
@@ -69,7 +73,8 @@ app.on("ready", function() {
   win = new BrowserWindow({
     width: 800,
     height: 1075,
-    resizable: false
+    resizable: false,
+    webPreferences: commonWebPreferences
   }); //create main window
 
   win.setMenu(null); //the main window had no menu
@@ -137,7 +142,8 @@ app.on("ready", function() {
         abt = new BrowserWindow({
           width: 500,
           height: 625,
-          resizable: false
+          resizable: false,
+          webPreferences: commonWebPreferences
         });
         abt.setMenu(null); //the about window has no menu
         abt.loadURL(url.format({ //loads the webpage for the about window
@@ -177,4 +183,10 @@ app.on("ready", function() {
   ]);
   tray.setToolTip("Well-being"); //Honestly no clue but itll make the tray say insomnia in some other place
   tray.setContextMenu(contextMenu); //attach the menu to the tray
+});
+
+// IPC handler for renderer quit requests
+ipcMain.on('app-quit', () => {
+  app.isQuiting = true;
+  app.quit();
 });
